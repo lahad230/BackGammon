@@ -1,0 +1,23 @@
+﻿<Window x:Class="Backgammon.Project.UI.Views.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Backgammon.Project.UI.Views"
+        mc:Ignorable="d"
+        Title="ChatWindow" Height="450" Width="800"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Chat}">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="You chat with: "></TextBlock>
+                <TextBlock x:Name="title" Text="{Binding Recipient}"></TextBlock>
+            </StackPanel>
+            <ListView ItemsSource="{Binding Messages}"></ListView>
+            <TextBlock Text="Message:"></TextBlock>
+            <TextBox Text="{Binding YourMessage}"></TextBox>
+            <Button Content="send" Command="{Binding SendMessageCommand}"></Button>
+        </StackPanel>
+    </ScrollViewer>
+
+</Window>

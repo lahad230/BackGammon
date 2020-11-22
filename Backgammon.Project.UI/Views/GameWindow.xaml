@@ -1,0 +1,225 @@
+﻿<Window x:Class="Backgammon.Project.UI.Views.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Backgammon.Project.UI.Views"
+        xmlns:con="clr-namespace:Backgammon.Project.UI.Converters"
+        mc:Ignorable="d"
+        Title="GameWindow" MinHeight="550" Width="800"
+        x:Name="Game"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Game}">
+
+    <Window.Resources>
+        <con:EllipseConverter x:Key="EllipseConverter"></con:EllipseConverter>
+    </Window.Resources>
+    <StackPanel>
+        <TextBlock x:Name="GameId" Text="{Binding Game.GameId}" Visibility="Collapsed"></TextBlock>
+        <TextBlock Text=" Backgammon"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Cyan: "></TextBlock>
+            <TextBlock x:Name="user1" Text="{Binding Game.White}" Margin="10"></TextBlock>
+            <TextBlock Text=" vs" Margin="10"></TextBlock>
+            <TextBlock Text="Black: "></TextBlock>
+            <TextBlock x:Name="user2" Text="{Binding Game.Black}" Margin="10"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Moves: " Margin="10"></TextBlock>
+            <TextBlock Text="{Binding Game.DieActions[0]}" Margin="10"></TextBlock>
+            <TextBlock Text="{Binding Game.DieActions[1]}" Margin="10"></TextBlock>
+            <TextBlock Text="{Binding Game.DieActions[2]}" Margin="10"></TextBlock>
+            <TextBlock Text="{Binding Game.DieActions[3]}" Margin="10"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Game.CurrentPlayer}"></TextBlock>
+            <TextBlock Text=" turn. "></TextBlock>
+            <TextBlock Text="Actions left: "></TextBlock>
+            <TextBlock Text="{Binding Game.DieActions.Count}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding Path=DataContext.GoHomeCommand, ElementName=Game}" CommandParameter="">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Gold">
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="1">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[1], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="2">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[2], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="3">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[3], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="4">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[4], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="5">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[5], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="6">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[6], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveEatenCommand, ElementName=Game}" CommandParameter="0">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Brown">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[0], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="7">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[7], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="8">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[8], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="9">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[9], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="10">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[10], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="11">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <ItemsControl ItemsSource="{Binding Game.Board[11], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="12">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <ItemsControl ItemsSource="{Binding Game.Board[12], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <TextBlock Text="{Binding Path=DataContext.Instructions, ElementName=Game}"></TextBlock>
+        </StackPanel>
+        <TextBlock></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding Path=DataContext.GoHomeCommand, ElementName=Game}" CommandParameter="">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Gold">
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="24">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[24], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="23">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[23], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button
+                Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="22">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[22], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="21">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[21], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="20">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[20], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="19">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[19], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveEatenCommand, ElementName=Game}" CommandParameter="25">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Brown">
+                    <ItemsControl ItemsSource="{Binding Game.Board[25], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="18">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[18], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="17">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[17], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="16">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[16], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="15">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[15], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="14">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="Bisque">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[14], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.MoveCommand, ElementName=Game}" CommandParameter="13">
+                <StackPanel Orientation="Vertical" Height="200" Width="30" Background="AliceBlue">
+                    <StackPanel.LayoutTransform>
+                        <RotateTransform Angle="180"/>
+                    </StackPanel.LayoutTransform>
+                    <ItemsControl ItemsSource="{Binding Game.Board[13], Converter={StaticResource EllipseConverter}}"></ItemsControl>
+                </StackPanel>
+            </Button>
+            <Button Command="{Binding Path=DataContext.ResignCommand, ElementName=Game}" Content="Resign game" Width="100" Height="50" Margin="50"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

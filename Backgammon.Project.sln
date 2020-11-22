@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backgammon.Project.Server", "Backgammon.Project.Server\Backgammon.Project.Server.csproj", "{C2A3CA5A-4E38-49F5-AB24-09E16F9005D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedAssets", "SharedAssets\SharedAssets.csproj", "{972569EB-ABFD-404A-86E4-B2F452D82408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backgammon.Project.DAL", "Backgammon.Project.DAL\Backgammon.Project.DAL.csproj", "{A5E5890E-BCF7-461D-A025-7B90097847F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backgammon.Project.UI", "Backgammon.Project.UI\Backgammon.Project.UI.csproj", "{D1187F8E-884D-47BF-8425-3AE14D7FEB8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2A3CA5A-4E38-49F5-AB24-09E16F9005D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A3CA5A-4E38-49F5-AB24-09E16F9005D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A3CA5A-4E38-49F5-AB24-09E16F9005D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A3CA5A-4E38-49F5-AB24-09E16F9005D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{972569EB-ABFD-404A-86E4-B2F452D82408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972569EB-ABFD-404A-86E4-B2F452D82408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972569EB-ABFD-404A-86E4-B2F452D82408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972569EB-ABFD-404A-86E4-B2F452D82408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5E5890E-BCF7-461D-A025-7B90097847F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E5890E-BCF7-461D-A025-7B90097847F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E5890E-BCF7-461D-A025-7B90097847F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E5890E-BCF7-461D-A025-7B90097847F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1187F8E-884D-47BF-8425-3AE14D7FEB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1187F8E-884D-47BF-8425-3AE14D7FEB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1187F8E-884D-47BF-8425-3AE14D7FEB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1187F8E-884D-47BF-8425-3AE14D7FEB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FFAF461-15F3-4162-9E79-D8E46B2F873C}
+	EndGlobalSection
+EndGlobal
